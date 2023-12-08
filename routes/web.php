@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\InformeController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\CuentasController;
+use App\Http\Controllers\RespaldoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,3 +116,30 @@ Route::post('/pedido/filtrado/', [PedidoController::class, 'filtrado']);
 Route::get('/cuentas', [CuentasController::class, 'index']);
 Route::get('/cuentas/administradores', [CuentasController::class, 'administradores']);
 Route::get('/cuentas/clientes', [CuentasController::class, 'clientes']);
+
+// !Respaldo
+Route::get('/respaldo', [RespaldoController::class, 'index']);
+
+// !Función de respaldo de db
+Route::get('/respaldoDB', function () {
+
+    // Configuración de la base de datos
+    $host = 'localhost';
+    $usuario = 'beto';
+    $contrasena = 'h13h12h2002';
+    $nombre_bd = 'artemex';
+
+    // ruta de mysqldump
+    $ruta = "\"C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin\\mysqldump.exe\"";
+
+    // Nombre del archivo de respaldo
+    $archivo_respaldo = 'respaldo_bd.sql';
+
+    // Comando mysqldump
+    $comando = "$ruta -h $host -u $usuario -p$contrasena --routines $nombre_bd > $archivo_respaldo";
+
+    // Ejecutar el comando
+    system($comando);
+
+    return redirect::to('/respaldo');
+});

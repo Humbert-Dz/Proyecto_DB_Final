@@ -29,8 +29,10 @@
                   "url( {{ asset('src/backgrounds/packages.svg') }})",
               account:
                   "url( {{ asset('src/backgrounds/account.svg') }})",
-                  addProduct:
+              addProduct:
                   "url( {{ asset('src/backgrounds/addProduct.svg') }})",
+              database:
+                  "url( {{ asset('src/backgrounds/database.svg') }})",
             },
             gridTemplateColumns: {
               'fit': 'repeat(auto-fit, minmax(300px, 1fr))',
@@ -117,6 +119,12 @@
             <a href="{{ url('cuentas') }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group active:scale-95">
               <img src="{{ asset('src/icons/user.svg') }}" alt="" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
               <span class="flex-1 ml-3 whitespace-nowrap">Cuentas</span>
+            </a>
+          </li> 
+          <li>
+            <a href="{{ url('respaldo') }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group active:scale-95">
+              <img src="{{ asset('src/icons/database.svg') }}" alt="" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
+              <span class="flex-1 ml-3 whitespace-nowrap" title="Respalda la base de datos aquí">Respaldo DB</span>
             </a>
           </li> 
         </ul>
