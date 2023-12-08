@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\InformeController;
+use App\Http\Controllers\PedidoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,4 +100,13 @@ Route::get('/producto/eliminar/{id}', [ProductoController::class, 'eliminar']);
 //! Informes
 Route::get('/informe', [InformeController::class, 'index']);
 Route::post('/informe', [InformeController::class, 'index']);
+
+
+//! Pedidos
+Route::get('/pedido', [PedidoController::class, 'index']);
+Route::get('/pedido/confirmar/{id}', [PedidoController::class, 'confirmar']);
+Route::post('/pedido/enviar/{id}', [PedidoController::class, 'enviar']);
+Route::get('/pedido/cancelar/{id}', [PedidoController::class, 'cancelar']);
+Route::post('/pedido/buscar', [PedidoController::class, 'buscar']);
+Route::post('/pedido/filtrado/', [PedidoController::class, 'filtrado']);
 
