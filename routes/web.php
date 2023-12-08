@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\InformeController;
 use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\CuentasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -110,3 +111,7 @@ Route::get('/pedido/cancelar/{id}', [PedidoController::class, 'cancelar']);
 Route::post('/pedido/buscar', [PedidoController::class, 'buscar']);
 Route::post('/pedido/filtrado/', [PedidoController::class, 'filtrado']);
 
+// ! cuentas
+Route::get('/cuentas', [CuentasController::class, 'index']);
+Route::get('/cuentas/administradores', [CuentasController::class, 'administradores']);
+Route::get('/cuentas/clientes', [CuentasController::class, 'clientes']);
