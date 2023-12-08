@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\InformeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,3 +95,8 @@ Route::post('/producto/agregar', [ProductoController::class, 'agregar']);
 Route::get('/producto/editar/{id}', [ProductoController::class, 'editar']);
 Route::post('/producto/actualizar/{id}', [ProductoController::class, 'actualizar']);
 Route::get('/producto/eliminar/{id}', [ProductoController::class, 'eliminar']);
+
+//! Informes
+Route::get('/informe', [InformeController::class, 'index']);
+Route::post('/informe', [InformeController::class, 'index']);
+
